@@ -16,12 +16,13 @@ result ← pop from the stack
 #include <string>
 #include <regex>
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
 stack<double> st;
 string instr;
-string num_pattern("[0-9]+(\\.[0-9]*)?");
+string num_pattern("(\\+|-)?[0-9]+(\\.[0-9]*)?");
 string op_pattern("[+*/-]");
 regex re(num_pattern + "|" + op_pattern);
 
@@ -35,10 +36,10 @@ int main(int argc, char **argv) {
     sregex_iterator it_end;
 
     for (;it != it_end; ++it) {
-      cout << it->str().c_str() << "   ";
+      // cout << it->str().c_str() << "   ";
 
       if (it->str().find_first_not_of("+*/-") != it->str().npos) {
-        st.push( atof(it->str().c_str()) ); break;
+        st.push(atof(it->str().c_str()));
       } else {
         double op2 = st.top(); st.pop();
         double op1 = st.top(); st.pop();
@@ -50,6 +51,6 @@ int main(int argc, char **argv) {
         }
       }
     }
-    if (!st.empty()) cout << " = " << st.top() << endl;
+    if (!st.empty()) cout << "= " << st.top() << endl;
   return 0;
 }
