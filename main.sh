@@ -20,8 +20,8 @@ echo '+------------------+'
 echo ' '
 
 # g++ -o rpn-calcpp simple-rpn-calc.cpp
-clang++ -std=c++11 -o rpn-calcpp rpn-calc.cpp
-./rpn-calcpp '10 10 +' # 20
+clang++ -std=c++11 -o rpn-calc-regex1 rpn-calc-regex1.cpp
+./rpn-calc-regex1 '10 10 +' # 20
 ./rpn-calcpp '10 -10 -' # 20
 ./rpn-calcpp '-10 -10 +' # -20
 ./rpn-calcpp '10 10 -' # 0
