@@ -29,10 +29,14 @@ int main(int argc, char **argv) {
     if (argc == 1) return 0;
 
     instr = argv[1];
+    cout << instr << "   ";
+
     sregex_iterator it(instr.begin(), instr.end(), re);
     sregex_iterator it_end;
 
     for (;it != it_end; ++it) {
+      cout << it->str().c_str() << "   ";
+
       if (it->str().find_first_not_of("+*/-") != it->str().npos) {
         st.push( atof(it->str().c_str()) ); break;
       } else {
