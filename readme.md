@@ -6,8 +6,12 @@
 We're going to make a calculator in cpp in stages:   
 * First look at the RPN algorithm;  
 * Then build the calculator till we find the limations, using:    
-1. Regexes;   
-2. Flex & Bison;   
+1. Regexes - seems easy but gives you two problems;   
+* basic four functions - this is easy with regexes;   
+* extend with `^` raised to the power - harder because ^ is a special character in regexes;   
+* extend with constants - `e` is easy, `pi` is harder;    
+* extend with the unary operators - 
+2. Flex & Bison - solves the problems of regexes but do you really need a language spec;   
 3. Our own parser;   
 4. ...;   
 
