@@ -1,0 +1,2 @@
+language = "bash"
+run = "chmod 755 ./main.sh; ./main.sh"

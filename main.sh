@@ -19,8 +19,8 @@ echo "binaries in ./Results"
 echo '+------------------+'
 echo ' '
 
-g++ -o rpn-calc-regex1 rpn-calc-regex1.cpp
-# clang++ -std=c++11 -o rpn-calc-regex1 rpn-calc-regex1.cpp
-./rpn-calc-regex1 '10 10 +' # 20
+# g++ -o rpn-calc-regex2 rpn-calc-regex1.cpp
+clang++ -std=c++11 -o rpn-calc-regex1 rpn-calc-regex1.cpp
+./rpn-calc-regex2 '10 10 +' # 20
 
 
