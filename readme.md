@@ -10,9 +10,16 @@ We're going to make a calculator in cpp in stages:
 * basic four functions - this is easy with regexes;   
 * extend with `^` raised to the power - harder because ^ is a special character in regexes;   
 * extend with constants - `e` is easy, `pi` is harder;    
-* extend with the unary operators - 
+* extend with the unary operators - there's got to be a better way!   
+
 2. Flex & Bison - solves the problems of regexes but do you really need a language spec;   
+* arithmetic as a domain specific language;   
+
 3. Our own parser;   
+* data structure in c;   
+* hardware implementation;   
+* in assembler;   
+
 4. ...;   
 
 ### First, the RPN Algorithm
@@ -21,13 +28,14 @@ We're going to make a calculator in cpp in stages:
 
 ```pseudocode
 for each token in the postfix expression:
-  if token is an operator:
+  if token is an operand:
+    push token onto the stack
+  else if token is an operator:
     operand_2 ← pop from the stack
     operand_1 ← pop from the stack
     result ← evaluate token with operand_1 and operand_2
     push result back onto the stack
-  else if token is an operand:
-    push token onto the stack
+
 result ← pop from the stack
 ```
 
