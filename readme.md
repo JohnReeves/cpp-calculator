@@ -3,6 +3,10 @@
 
 ### The Project
 
+Packages and patterns have been developed to solve a particular problem and, as in school level maths, although we spend a long time learning a technique it doesn't translate well to problems it hasn't been developed for.
+
+The phrase about regexes is: I had one problem now I have two; with flex/bison you could say - now I have six! Use of packages is a handshaking problem :-) .  
+
 We're going to make a calculator in cpp in stages:   
 * First look at the RPN algorithm;  
 * Then build the calculator till we find the limations, using:    
